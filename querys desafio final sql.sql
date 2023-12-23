@@ -118,8 +118,9 @@ order by P.id
 
 /* punto 8 */
 ALTER TABLE respuestas
-ADD CONSTRAINT fk_usuario_id
-FOREIGN KEY (usuario_id) REFERENCES usuarios (id) ON DELETE CASCADE;
+DROP CONSTRAINT respuestas_usuario_id_fkey,
+ADD FOREIGN KEY 
+ (usuario_id) REFERENCES usuarios (id) ON DELETE CASCADE;
 
 /* punto 9 */
 ALTER TABLE usuarios
